@@ -2,7 +2,7 @@ import composeWithTracker from 'rn-meteor-containerize';
 import Meteor from 'react-native-meteor';
 
 function composer(props, onData){
-  const handle = Meteor.subscribe('singleCrew', Meteor.userId());
+  const handle = Meteor.subscribe('users.single', Meteor.userId());
   const curUser = Meteor.user();
 
   if(handle.ready()){
