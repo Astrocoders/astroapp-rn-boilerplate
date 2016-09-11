@@ -15,7 +15,9 @@
     "hyper-clean": "npm run warning-clean-up && npm run clear-watchman && npm run ios-clean && rm -rf $TMPDIR/react-* && npm run reinstall-npm-modules && npm run gradle-clean && rnpm link",
     "test": "BABEL_ENV=test mocha src/**/tests/*.js --require react-native-mock/mock.js --compilers js:babel-core/register",
     "test-watch": "npm run test -- --watch --watch-extensions js --growl",
-    "shake": "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82"
+    "shake": "$ANDROID_HOME/platform-tools/adb devices | grep '\\t' | awk '{print $1}' | sed 's/\\s//g' | xargs -I {} $ANDROID_HOME/platform-tools/adb -s {} shell input keyevent 82",
+    "release:generate": "cd android && ./gradlew assembleRelease",
+    "release:install": "cd android && adb install app/build/outputs/apk/app-release.apk"
   },
   "dependencies": {
     "color": "^0.11.3",
@@ -29,7 +31,6 @@
     "react-native-loading-spinner-overlay": "^0.3.0",
     "react-native-meteor": "^1.0.0-rc9",
     "react-native-navbar": "^1.5.0",
-    "react-native-onesignal": "^1.2.1",
     "react-native-router-flux": "^3.35.0",
     "react-native-simple-warn": "^2.0.0",
     "react-native-spinkit": "^0.1.3",
