@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh",
     "android": "react-native run-android",
-    "ios": "cd ios && open phaser.xcworkspace",
+    "ios": "cd ios && open astroapp.xcworkspace",
     "reverse-ports": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:3000 tcp:3000",
     "warning-clean-up": "echo '\\033[1;33m Please, uninstall the app from your phone or destroy the emulator\n\\033[0m'",
     "reinstall-npm-modules": "npm cache clean && rm -rf node_modules && npm install",
