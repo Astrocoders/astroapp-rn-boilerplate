@@ -35,8 +35,7 @@
     "react-native-simple-warn": "^2.0.0",
     "react-native-spinkit": "^0.1.3",
     "react-native-vector-icons": "^2.1.0",
-    "redux": "^3.6.0",
-    "rn-meteor-containerize": "^1.0.1"
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "appium": "^1.5.3",

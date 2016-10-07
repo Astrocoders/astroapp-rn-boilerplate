@@ -1,6 +1,7 @@
 import { Actions } from 'react-native-router-flux';
-import composeWithTracker from 'rn-meteor-containerize';
-import Meteor from 'react-native-meteor';
+import Meteor, {
+  composeWithTracker,
+} from 'react-native-meteor';
 
 function composer(props, onData){
   const loggingIn = Meteor.loggingIn();

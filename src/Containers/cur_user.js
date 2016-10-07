@@ -1,5 +1,6 @@
-import composeWithTracker from 'rn-meteor-containerize';
-import Meteor from 'react-native-meteor';
+import Meteor, {
+  composeWithTracker,
+} from 'react-native-meteor';
 
 function composer(props, onData){
   const handle = Meteor.subscribe('users.single', Meteor.userId());
