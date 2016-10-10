@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
     "ios": "cd ios && open astroapp.xcworkspace",
     "reverse-ports": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:3000 tcp:3000",
