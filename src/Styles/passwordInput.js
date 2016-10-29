@@ -1,5 +1,5 @@
-import React from "react";
-import {StyleSheet} from "react-native";
+import React from "react"
+import {StyleSheet} from "react-native"
 
 export default StyleSheet.create({
   eyeIcon: {
@@ -9,4 +9,4 @@ export default StyleSheet.create({
     padding: 4,
     borderBottomWidth: 1,
   },
-});
+})

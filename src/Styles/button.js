@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-import {StyleSheet} from 'react-native';
-import {brandPrimary as primary, brandSecondary as secondary} from './colors';
+import {StyleSheet} from 'react-native'
+import {brandPrimary as primary, brandSecondary as secondary} from './colors'
 
 export default StyleSheet.create({
   button: {
@@ -46,4 +46,4 @@ export default StyleSheet.create({
     alignSelf: 'center',
     fontSize: 17
   }
-});
+})

@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import {View, Text} from 'react-native';
-import Loader from './Loader';
+import React from 'react'
+import {View, Text} from 'react-native'
+import Loader from './Loader'
 
 const FullLoader = () => (
   <View
@@ -17,6 +17,6 @@ const FullLoader = () => (
   >
     <Loader/>
   </View>
-);
+)
 
-export default FullLoader;
+export default FullLoader

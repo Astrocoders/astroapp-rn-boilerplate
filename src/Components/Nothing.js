@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
-import React from "react";
+import React from "react"
 import {
   View,
   Text,
-} from "react-native";
-import Icon from 'react-native-vector-icons/MaterialIcons';
+} from "react-native"
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 // Styles
-import styles from '../Styles/loader';
+import styles from '../Styles/loader'
 
 const Nothing = ({message = 'Nothing to show :('}) => (
   <View
@@ -43,6 +43,6 @@ const Nothing = ({message = 'Nothing to show :('}) => (
       </Text>
     </View>
   </View>
-);
+)
 
-export default Nothing;
+export default Nothing

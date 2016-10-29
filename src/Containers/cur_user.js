@@ -1,21 +1,21 @@
 import Meteor, {
   composeWithTracker,
-} from 'react-native-meteor';
+} from 'react-native-meteor'
 
 function composer(props, onData){
-  const handle = Meteor.subscribe('users.single', Meteor.userId());
-  const curUser = Meteor.user();
+  const handle = Meteor.subscribe('users.single', Meteor.userId())
+  const curUser = Meteor.user()
 
   if(handle.ready()){
     onData(null, {
       user: curUser,
       loading: false,
-    });
+    })
   } else {
     onData(null, {
       loading: true,
-    });
+    })
   }
 }
 
-export default composeWithTracker(composer);
+export default composeWithTracker(composer)

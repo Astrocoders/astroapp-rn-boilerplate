@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
-import {StyleSheet} from 'react-native';
-import {brandSecondary as secondary} from './colors';
-import {widthInput} from './inputs';
+import {StyleSheet} from 'react-native'
+import {brandSecondary as secondary} from './colors'
+import {widthInput} from './inputs'
 
 export default StyleSheet.create({
   container: {
@@ -38,4 +38,4 @@ export default StyleSheet.create({
   row: {
     flexDirection: 'row'
   }
-});
+})

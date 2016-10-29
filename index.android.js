@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'
 import {
   AppRegistry,
   BackAndroid,
-} from 'react-native';
+} from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import AppRootRouter from './src/AppRootRouter';
+import AppRootRouter from './src/AppRootRouter'
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
-  Actions.pop();
-  return true;
-});
+  Actions.pop()
+  return true
+})
 
 const App = () => {
   return (
     <AppRootRouter />
-  );
+  )
 }
 
-AppRegistry.registerComponent('AstroApp', () => App);
+AppRegistry.registerComponent('AstroApp', () => App)

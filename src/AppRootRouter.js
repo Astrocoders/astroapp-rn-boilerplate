@@ -1,83 +1,83 @@
-'use strict';
+'use strict'
 
 // Components
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
   Navigator,
   AsyncStorage,
   View,
   Text,
-} from 'react-native';
+} from 'react-native'
 import {
   Actions,
   Router,
   Scene,
-} from 'react-native-router-flux';
-import Drawer from 'react-native-drawer';
-import Loader from './Components/Loader';
-import _ from 'lodash';
-import Meteor from 'react-native-meteor';
+} from 'react-native-router-flux'
+import Drawer from 'react-native-drawer'
+import Loader from './Components/Loader'
+import _ from 'lodash'
+import Meteor from 'react-native-meteor'
 
 // Components
-import Scenes from './Scenes';
-import Sidebar from './Components/Sidebar';
+import Scenes from './Scenes'
+import Sidebar from './Components/Sidebar'
 
 // Services
-import AppEventEmitter from '~/Services/AppEventEmitter';
-import ConnectServer from '~/Services/ConnectServer';
-import RedirNonUserContainer from './Containers/redir_non_user';
-import UserStoredTokenContainer from './Containers/user_stored_token';
+import AppEventEmitter from '~/Services/AppEventEmitter'
+import ConnectServer from '~/Services/ConnectServer'
+import RedirNonUserContainer from './Containers/redir_non_user'
+import UserStoredTokenContainer from './Containers/user_stored_token'
 
-import '~/Services/OneSignalListener';
+import '~/Services/OneSignalListener'
 
 // Styles
-import appStyles from './Styles/app';
+import appStyles from './Styles/app'
 
 // Initialize websocket connection
-ConnectServer();
+ConnectServer()
 
 @UserStoredTokenContainer
 @RedirNonUserContainer
 export default class RootRouter extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.scenes = null;
-    this.state = {};
+    this.scenes = null
+    this.state = {}
   }
 
   componentDidMount() {
     AppEventEmitter.addListener('menu.trigger.open',
-      this.openSidebar.bind(this));
+      this.openSidebar.bind(this))
     AppEventEmitter.addListener('sibebar.enable',
       () => {
-        this.stateSideBar(true);
-      });
+        this.stateSideBar(true)
+      })
     AppEventEmitter.addListener('sibebar.disable',
       () => {
-        this.stateSideBar(false);
-      });
+        this.stateSideBar(false)
+      })
   }
 
   componentWillUnmount() {
-    AppEventEmitter.removeListener('menu.trigger.open');
+    AppEventEmitter.removeListener('menu.trigger.open')
   }
 
   closeSidebar(navigation) {
     // Only close the menu if the router is after the actual one
     if (navigation.type === 'AFTER_ROUTER_ROUTE') {
-      if (!_.get(this.refs, 'menu')) return;
-      this.refs.menu.close();
+      if (!_.get(this.refs, 'menu')) return
+      this.refs.menu.close()
     }
   }
 
   openSidebar() {
-    if (!_.get(this.refs, 'menu')) return;
-    this.refs.menu.open();
+    if (!_.get(this.refs, 'menu')) return
+    this.refs.menu.open()
   }
 
   stateSideBar(state) {
-    this.setState({disableSideBar: !state});
+    this.setState({disableSideBar: !state})
   }
 
   render() {
@@ -103,6 +103,6 @@ export default class RootRouter extends Component {
           />
         </Drawer>
       </View>
-    );
+    )
   }
-};
+}

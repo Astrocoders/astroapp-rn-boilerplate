@@ -1,20 +1,20 @@
-import { Actions } from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux'
 import Meteor, {
   composeWithTracker,
-} from 'react-native-meteor';
+} from 'react-native-meteor'
 
 function composer(props, onData){
-  const loggingIn = Meteor.loggingIn();
-  const user = Meteor.user();
+  const loggingIn = Meteor.loggingIn()
+  const user = Meteor.user()
   if(!loggingIn && user){
-    Actions.dashboard({type: 'replace'});
+    Actions.dashboard({type: 'replace'})
 
-    return;
+    return
   }
 
   onData(null, {
     loggingIn,
-  });
+  })
 }
 
-export default composeWithTracker(composer);
+export default composeWithTracker(composer)

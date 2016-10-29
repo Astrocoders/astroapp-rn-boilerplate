@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native'
 
 export default StyleSheet.create({
 	layout: {
@@ -10,4 +10,4 @@ export default StyleSheet.create({
 		right: 0, 
 		bottom: 0
 	} 
-});
+})

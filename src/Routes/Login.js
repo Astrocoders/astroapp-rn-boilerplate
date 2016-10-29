@@ -1,6 +1,6 @@
 import React, {
   Component
-} from 'react';
+} from 'react'
 import {
   Text, 
   View, 
@@ -11,58 +11,58 @@ import {
   Image, 
   Keyboard,
   StyleSheet,
-} from 'react-native';
-import Spinner from 'react-native-loading-spinner-overlay';
-import {Actions} from 'react-native-router-flux';
-import Meteor from 'react-native-meteor';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+} from 'react-native'
+import Spinner from 'react-native-loading-spinner-overlay'
+import {Actions} from 'react-native-router-flux'
+import Meteor from 'react-native-meteor'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 // Components
-import TextInput from '~/Components/TextInput';
-import PasswordTextInput from '~/Components/PasswordInput';
-import ButtonRounded from '~/Components/ButtonRounded';
+import TextInput from '~/Components/TextInput'
+import PasswordTextInput from '~/Components/PasswordInput'
+import ButtonRounded from '~/Components/ButtonRounded'
 
 // Services and utils
-import { timeout } from '~/Services/Timers';
-import AppEventEmitter from '~/Services/AppEventEmitter';
-import SetupOneSignal from '~/Services/SetupOneSignal';
+import { timeout } from '~/Services/Timers'
+import AppEventEmitter from '~/Services/AppEventEmitter'
+import SetupOneSignal from '~/Services/SetupOneSignal'
 
 // Containers
-import RedirUserContainer from '~/Containers/redir_user';
+import RedirUserContainer from '~/Containers/redir_user'
 
 // Styles
-import loginStyles from '~/Styles/login';
+import loginStyles from '~/Styles/login'
 
 class Login extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       email: null,
       password: null,
       logoSectionHeight: new Animated.Value(200),
       scroll: false,
-    };
+    }
   }
 
   componentWillMount () {
     this.onKeyboardShow = Keyboard
-      .addListener('keyboardWillShow', this._keyboardWillShow.bind(this));
+      .addListener('keyboardWillShow', this._keyboardWillShow.bind(this))
     this.onKeyboardHide = Keyboard
-      .addListener('keyboardWillHide', this._keyboardWillHide.bind(this));
+      .addListener('keyboardWillHide', this._keyboardWillHide.bind(this))
   }
 
   componentDidMount () {
-    AppEventEmitter.emit('sidebar.disable');
-    this.onKeyboardHide.remove();
-    this.onKeyboardShow.remove();
+    AppEventEmitter.emit('sidebar.disable')
+    this.onKeyboardHide.remove()
+    this.onKeyboardShow.remove()
   }
 
   _keyboardWillShow (e) {
-    this.setState({scroll: true});
+    this.setState({scroll: true})
   }
 
   _keyboardWillHide (e) {
-    this.setState({scroll: false});
+    this.setState({scroll: false})
   }
 
   _onKeyboardChange({ show }){
@@ -70,22 +70,22 @@ class Login extends Component {
       Animated.timing(this.state.logoSectionHeight, {
         toValue: show ? 40 : 200,
         duration: 200,
-      }).start();
-    }, 200);
+      }).start()
+    }, 200)
   }
 
   _login() {
-    const { email, password } = this.state;
+    const { email, password } = this.state
     Meteor.loginWithPassword(email, password, error => {
       if (error) {
         Alert.alert('Login failed', error.reason, [
           {text: 'Ok'},
-        ]);
-        return;
+        ])
+        return
       }
 
-      setTimeout(SetupOneSignal, 2000);
-    });
+      setTimeout(SetupOneSignal, 2000)
+    })
   }
 
   render() {
@@ -140,8 +140,8 @@ class Login extends Component {
         />
       </View>
       </KeyboardAwareScrollView>
-    );
+    )
   }
 }
 
-export default RedirUserContainer(Login);
+export default RedirUserContainer(Login)

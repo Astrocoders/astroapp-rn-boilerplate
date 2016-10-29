@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-import React, {Component} from 'react';
-import {Text, TouchableOpacity} from "react-native";
+import React, {Component} from 'react'
+import {Text, TouchableOpacity} from "react-native"
 
 // Styles
-import buttonStyles from '../Styles/button';
+import buttonStyles from '../Styles/button'
 
 class Button extends Component {
 	render() {
@@ -19,8 +19,8 @@ class Button extends Component {
           {this.props.text}
         </Text>
 			</TouchableOpacity>
-		);
+		)
 	}
 }
 
-export default Button;
+export default Button

@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
-import React, {Component} from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import {Actions} from 'react-native-router-flux';
+import React, {Component} from 'react'
+import {Text, View, TouchableOpacity} from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import {Actions} from 'react-native-router-flux'
 
 // Components
-import AppEventEmitter from '~/Services/AppEventEmitter';
+import AppEventEmitter from '~/Services/AppEventEmitter'
 
 // Styles
-import navbarStyles from '~/Styles/navbar.js';
-import {brandPrimary as primary} from '~/Styles/colors';
+import navbarStyles from '~/Styles/navbar.js'
+import {brandPrimary as primary} from '~/Styles/colors'
 
 class Navbar extends Component {
   static defaultProps = {
@@ -22,7 +22,7 @@ class Navbar extends Component {
   }
 
   render(){
-    const { props } = this;
+    const { props } = this
 
     return (
       <View style={navbarStyles.navbar}>
@@ -57,8 +57,8 @@ class Navbar extends Component {
           </View>
         </View>
       </View>
-    );
+    )
   }
 }
 
-export default Navbar;
+export default Navbar

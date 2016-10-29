@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 import React, {
   Component,
   PropTypes,
-} from 'react';
+} from 'react'
 import {
   Text,
   View,
@@ -11,24 +11,24 @@ import {
   TouchableWithoutFeedback,
   ScrollView,
   Alert,
-} from "react-native";
-import Meteor from 'react-native-meteor';
-import Moment from 'moment';
-import { Actions } from 'react-native-router-flux';
+} from "react-native"
+import Meteor from 'react-native-meteor'
+import Moment from 'moment'
+import { Actions } from 'react-native-router-flux'
 
 // Components
-import AppEventEmitter from '~/Services/AppEventEmitter';
+import AppEventEmitter from '~/Services/AppEventEmitter'
 
 // Styles
-import sidebar from '~/Styles/sidebar';
+import sidebar from '~/Styles/sidebar'
 
 class Sidebar extends Component {
   static contextTypes = {
     drawer: PropTypes.object,
-  };
+  }
 
   currentDate() {
-    return Moment().format('MM/DD/YYYY');
+    return Moment().format('MM/DD/YYYY')
   }
 
   _logout(){
@@ -39,8 +39,8 @@ class Sidebar extends Component {
   }
 
   _closeDrawer(){
-    this.context.drawer.close();
-    return true;
+    this.context.drawer.close()
+    return true
   }
 
   render() {
@@ -65,8 +65,8 @@ class Sidebar extends Component {
           </View>
         </ScrollView>
       </View>
-    );
+    )
   }
 }
 
-export default Sidebar;
+export default Sidebar

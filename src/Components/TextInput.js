@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
-import React, {Component} from "react";
-import {View, TextInput} from "react-native";
-import _ from 'lodash';
+import React, {Component} from "react"
+import {View, TextInput} from "react-native"
+import _ from 'lodash'
 
 // Styles
-import appStyles from '~/Styles/app';
+import appStyles from '~/Styles/app'
 
 class TextInputApp extends Component {
   render() {
@@ -17,8 +17,8 @@ class TextInputApp extends Component {
           style: appStyles.input,
         }, this.props)}/>
       </View>
-    );
+    )
   }
 }
 
-export default TextInputApp;
+export default TextInputApp

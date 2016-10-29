@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-import {StyleSheet} from 'react-native';
-import {brandSecondary as secondary} from './colors';
+import {StyleSheet} from 'react-native'
+import {brandSecondary as secondary} from './colors'
 
 export default StyleSheet.create({
 	textInput: {
@@ -37,5 +37,5 @@ export default StyleSheet.create({
 		margin: 15,
 		marginTop: 5
 	}
-});
+})
 

@@ -1,34 +1,34 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import {View, TextInput, DeviceEventEmitter} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import _ from 'lodash';
+import React from 'react'
+import {View, TextInput, DeviceEventEmitter} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
+import _ from 'lodash'
 
 // Styles
-import iconInputStyles from '~/Styles/iconInput';
-import appStyles from '~/Styles/app';
-import passwordInputStyles from '~/Styles/passwordInput';
-import {brandSecondary as secondary, dark, light} from '~/Styles/colors';
+import iconInputStyles from '~/Styles/iconInput'
+import appStyles from '~/Styles/app'
+import passwordInputStyles from '~/Styles/passwordInput'
+import {brandSecondary as secondary, dark, light} from '~/Styles/colors'
 
 class PasswordInput extends React.Component {
   constructor(props){
-    super(props);
+    super(props)
 
     this.state = {
       viewPassword: false,
-    };
+    }
   }
 
   togglePasswordView(){
-    this.setState({viewPassword: !this.state.viewPassword});
+    this.setState({viewPassword: !this.state.viewPassword})
   }
 
   render() {
     const textInputStyle = (this.props.dark) ?
-      iconInputStyles.textInputDark : iconInputStyles.textInput;
+      iconInputStyles.textInputDark : iconInputStyles.textInput
     const viewStyle = (this.props.dark) ?
-      iconInputStyles.outerBorderDark : iconInputStyles.outerBorder;
+      iconInputStyles.outerBorderDark : iconInputStyles.outerBorder
 
     return (
       <View style={this.props.hideBottomBorder ?
@@ -51,8 +51,8 @@ class PasswordInput extends React.Component {
           onPress={() => this.togglePasswordView()}
         />
       </View>
-    );
+    )
   }
 }
 
-export default PasswordInput;
+export default PasswordInput

@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
-import {StyleSheet, Dimensions} from 'react-native';
-import {brandPrimary as primary, brandSecondary as secondary} from './colors';
-let deviceHeight = Dimensions.get('window').height;
+import {StyleSheet, Dimensions} from 'react-native'
+import {brandPrimary as primary, brandSecondary as secondary} from './colors'
+let deviceHeight = Dimensions.get('window').height
 
 export default StyleSheet.create({
   background: {
@@ -71,4 +71,4 @@ export default StyleSheet.create({
   btnText: {
     color: '#333',
   },
-});
+})

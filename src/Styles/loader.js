@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native'
 
 export default StyleSheet.create({
   main: {
@@ -7,4 +7,4 @@ export default StyleSheet.create({
     backgroundColor: '#ffffff',
     paddingTop: 20,
   },
-});
+})

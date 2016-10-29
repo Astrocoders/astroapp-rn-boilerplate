@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
   Navigator,
-} from 'react-native';
+} from 'react-native'
 import {
   Actions,
   Router,
   Scene,
-} from 'react-native-router-flux';
+} from 'react-native-router-flux'
 
-import Login from './Routes/Login';
-import Register from './Routes/Register';
-import ForgotPassword from './Routes/ForgotPassword';
-import FullLoader from './Components/FullLoader';
+import Login from './Routes/Login'
+import Register from './Routes/Register'
+import ForgotPassword from './Routes/ForgotPassword'
+import FullLoader from './Components/FullLoader'
 
 export default Actions.create(
   <Scene key="root">
@@ -37,4 +37,4 @@ export default Actions.create(
       component={ForgotPassword}
     />
   </Scene>
-);
+)
