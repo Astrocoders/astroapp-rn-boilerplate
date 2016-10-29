@@ -1,16 +1,12 @@
 import React, {
-  Component
+  Component,
 } from 'react'
 import {
   Text, 
   View, 
-  ScrollView, 
-  Animated, 
   TouchableOpacity, 
   Alert, 
   Image, 
-  Keyboard,
-  StyleSheet,
 } from 'react-native'
 import Spinner from 'react-native-loading-spinner-overlay'
 import {Actions} from 'react-native-router-flux'
@@ -23,9 +19,7 @@ import PasswordTextInput from '~/Components/PasswordInput'
 import ButtonRounded from '~/Components/ButtonRounded'
 
 // Services and utils
-import { timeout } from '~/Services/Timers'
 import AppEventEmitter from '~/Services/AppEventEmitter'
-import SetupOneSignal from '~/Services/SetupOneSignal'
 
 // Containers
 import RedirUserContainer from '~/Containers/redir_user'
@@ -39,42 +33,14 @@ class Login extends Component {
     this.state = {
       email: null,
       password: null,
-      logoSectionHeight: new Animated.Value(200),
-      scroll: false,
     }
-  }
-
-  componentWillMount () {
-    this.onKeyboardShow = Keyboard
-      .addListener('keyboardWillShow', this._keyboardWillShow.bind(this))
-    this.onKeyboardHide = Keyboard
-      .addListener('keyboardWillHide', this._keyboardWillHide.bind(this))
   }
 
   componentDidMount () {
     AppEventEmitter.emit('sidebar.disable')
-    this.onKeyboardHide.remove()
-    this.onKeyboardShow.remove()
   }
 
-  _keyboardWillShow (e) {
-    this.setState({scroll: true})
-  }
-
-  _keyboardWillHide (e) {
-    this.setState({scroll: false})
-  }
-
-  _onKeyboardChange({ show }){
-    timeout(() => {
-      Animated.timing(this.state.logoSectionHeight, {
-        toValue: show ? 40 : 200,
-        duration: 200,
-      }).start()
-    }, 200)
-  }
-
-  _login() {
+  login(){
     const { email, password } = this.state
     Meteor.loginWithPassword(email, password, error => {
       if (error) {
@@ -83,8 +49,6 @@ class Login extends Component {
         ])
         return
       }
-
-      setTimeout(SetupOneSignal, 2000)
     })
   }
 
@@ -93,15 +57,13 @@ class Login extends Component {
       <KeyboardAwareScrollView
         style={loginStyles.container}
         scrollEnabled={this.state.scroll}
-        onKeyboardWillShow={this._onKeyboardChange.bind(this, {show: true})}
-        onKeyboardWillHide={this._onKeyboardChange.bind(this, {show: false})}
       >
-        <Animated.View
+        <View
           style={{height: this.state.logoSectionHeight}}
         >
           <Image source={require('~/img/icon.png')} style={loginStyles.logo} />
           <Text style={loginStyles.subLogo}>AstroApp</Text>
-        </Animated.View>
+        </View>
         <View style={loginStyles.body}>
           <TextInput
             placeholder="Email"
@@ -127,7 +89,7 @@ class Login extends Component {
           </Text>
         </TouchableOpacity>
         <ButtonRounded
-          onPress={() => this._login()}
+          onPress={() => this.login()}
           text="Sign in"
           style={loginStyles.btn}
           textStyle={loginStyles.btnText}
