@@ -12,5 +12,8 @@ It comes with:
 - [react-native-loading-spinner-overlay](https://github.com/niftylettuce/react-native-loading-spinner-overlay) for a simple overlay loading
 - [rn-meteor-containerize](https://github.com/Astrocoders/rn-meteor-containerize) a container that doesn't mess with your animations performance
 
+# Usage
+We strongly recommend you to not clone directly and use our CLI [astroman](https://github.com/Astrocoders/astroman) to help you build awesome apps. Check out `astroman`'s README for more.
+
 ### Todo
 - [ ] integrate with redux
