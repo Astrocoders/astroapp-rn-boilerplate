@@ -55,7 +55,7 @@ class Login extends Component {
           style={{height: this.state.logoSectionHeight}}
         >
           <Image source={require('~/img/icon.png')} style={loginStyles.logo} />
-          <Text style={loginStyles.subLogo}>AstroApp</Text>
+          <Text style={loginStyles.subLogo}>{'AstroApp'.toUpperCase()}</Text>
         </View>
         <View style={loginStyles.body}>
           <TextInput

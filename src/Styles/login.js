@@ -16,7 +16,7 @@ export default StyleSheet.create({
     paddingBottom: 15
   },
   container: {
-    backgroundColor: '#ED6464'
+    backgroundColor: '#f5f5f5'
   },
   logoBackground: {
     flex: 1,
@@ -33,7 +33,9 @@ export default StyleSheet.create({
   subLogo: {
     alignSelf: 'center',
     fontSize: 32,
-    color: 'white',
+    color: '#333',
+    fontFamily: 'sans-serif-light',
+    marginTop: 10,
   },
   registerContainer: {
     marginTop: 10,
