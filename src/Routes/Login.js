@@ -19,6 +19,7 @@ import PasswordTextInput from '~/Components/PasswordInput'
 import ButtonRounded from '~/Components/ButtonRounded'
 
 // Containers
+import RedirUserContainer from '~/Containers/redir_user'
 
 // Styles
 import loginStyles from '~/Styles/login'
