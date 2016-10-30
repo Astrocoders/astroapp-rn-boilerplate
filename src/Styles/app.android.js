@@ -1,7 +1,6 @@
 'use strict'
 
 import {StyleSheet} from 'react-native'
-import {brandPrimary as primary} from './colors'
 import {widthInput} from './inputs'
 
 export default StyleSheet.create({
@@ -11,7 +10,6 @@ export default StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: primary
   },
   body: {
     flex: 1,

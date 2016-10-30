@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "redux-logger": "^2.7.4"
+  }
+}

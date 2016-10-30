@@ -1,7 +1,6 @@
 'use strict'
 
 import {StyleSheet} from 'react-native'
-import {brandPrimary as primary, brandSecondary as secondary} from './colors'
 
 export default StyleSheet.create({
   button: {
@@ -10,7 +9,6 @@ export default StyleSheet.create({
     paddingBottom: 10,
     paddingLeft: 75,
     paddingRight: 75,
-    borderColor: secondary,
     borderWidth: 1,
     alignSelf: 'center',
     borderRadius: 23,
@@ -20,7 +18,6 @@ export default StyleSheet.create({
     marginRight: 20,
   },
   coloredButton: {
-    backgroundColor: secondary,
     padding: 10,
     borderColor: 'transparent',
     borderWidth: 2,
@@ -36,7 +33,6 @@ export default StyleSheet.create({
     shadowRadius: 3
   },
   buttonText: {
-    color: secondary,
     fontWeight: '200',
     alignSelf: 'center',
     fontSize: 18

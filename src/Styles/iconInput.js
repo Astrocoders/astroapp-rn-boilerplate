@@ -1,7 +1,6 @@
 'use strict'
 
 import {StyleSheet} from 'react-native'
-import {brandSecondary as secondary} from './colors'
 
 export default StyleSheet.create({
 	textInput: {
@@ -29,7 +28,6 @@ export default StyleSheet.create({
 
 	outerBorderDark: {
 		position:'relative',
-		borderColor: secondary,
 		borderWidth: 0.8, 
 		borderTopWidth: 0, 
 		borderRightWidth: 0, 

@@ -5,7 +5,6 @@ import {Text, View, ScrollView, Alert} from 'react-native';
 import _ from 'lodash';
 import Meteor from 'react-native-meteor';
 import { Actions } from 'react-native-router-flux';
-import Warn from 'react-native-simple-warn';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 // Components
@@ -13,16 +12,12 @@ import PasswordInput from '~/Components/PasswordInput';
 import TextInput from '~/Components/TextInput';
 import ButtonRounded from '~/Components/ButtonRounded';
 import Navbar from '~/Components/Navbar';
-import AppEventEmitter from '~/Services/AppEventEmitter';
 
 // Styles
-import navbarStyles from '~/Styles/navbar';
 import registerStyles from '~/Styles/register';
 import appStyles from '~/Styles/app';
-import outerFormStyles from '~/Styles/outerForm';
 
 // Containers
-import RedirUserContainer from '~/Containers/redir_user';
 
 class Register extends React.Component {
   constructor(props) {
@@ -34,10 +29,6 @@ class Register extends React.Component {
       },
       formErrorText: null,
     };
-  }
-
-  componentDidMount() {
-    AppEventEmitter.emit('sidebar.disable');
   }
 
   _createUser(){
@@ -81,19 +72,9 @@ class Register extends React.Component {
   render() {
     return (
       <View style={appStyles.container}>
-        <Warn
-          style={{backgroundColor: 'crimson'}}
-          textStyle={{color: '#fff'}}
-          ref="warn"
-          message={this.state.formErrorText}
-        />
         <Navbar
           title="AstroApp"
-          subtitle=""
-          style={navbarStyles.toolbar}
-          subtitleStyle={navbarStyles.subtitle}
           leftButtonHandler={() => Actions.login()}
-          rightButtonHide={true}
         />
         <KeyboardAwareScrollView
           style={appStyles.body}
@@ -164,4 +145,4 @@ class Register extends React.Component {
   }
 }
 
-export default RedirUserContainer(Register);
+export default (Register);

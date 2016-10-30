@@ -6,7 +6,7 @@ import {
 import { Actions } from 'react-native-router-flux'
 import AppRootRouter from './src/AppRootRouter'
 import { Provider } from 'react-redux'
-import store from '/redux/store'
+import store from '~/redux/store'
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
   Actions.pop()

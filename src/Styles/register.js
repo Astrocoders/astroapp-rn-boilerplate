@@ -1,7 +1,6 @@
 'use strict'
 
 import {StyleSheet} from 'react-native'
-import {brandSecondary as secondary} from './colors'
 
 export default StyleSheet.create({
   termsAndConditions: {
@@ -37,6 +36,5 @@ export default StyleSheet.create({
     fontSize: 14
   },
   loginLink: {
-    color: secondary
   },
 })

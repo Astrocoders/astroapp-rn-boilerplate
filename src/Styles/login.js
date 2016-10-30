@@ -1,7 +1,6 @@
 'use strict'
 
 import {StyleSheet, Dimensions} from 'react-native'
-import {brandPrimary as primary, brandSecondary as secondary} from './colors'
 let deviceHeight = Dimensions.get('window').height
 
 export default StyleSheet.create({
@@ -45,7 +44,6 @@ export default StyleSheet.create({
     fontSize: 14
   },
   registerLink: {
-    color: secondary
   },
   forgotPasswordContainer: {
     alignSelf: 'center',

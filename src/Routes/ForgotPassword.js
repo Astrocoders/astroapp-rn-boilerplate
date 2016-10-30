@@ -18,12 +18,10 @@ import Navbar from '~/Components/Navbar';
 import TextInput from '~/Components/TextInput';
 
 // Styles
-import navbarStyles from '~/Styles/navbar';
 import forgotPasswordStyles from '~/Styles/forgotPassword';
 import appStyles from '~/Styles/app';
 
 // Containers
-import RedirUserContainer from '~/Containers/redir_user';
 
 class ForgotPassword extends React.Component {
   constructor(props) {
@@ -62,11 +60,7 @@ class ForgotPassword extends React.Component {
       <View style={appStyles.container}>
         <Navbar
           title="AstroApp"
-          subtitle=""
-          style={navbarStyles.toolbar}
-          subtitleStyle={navbarStyles.subtitle}
           leftButtonHandler={() => Actions.login()}
-          rightButtonHide={true}
         />
         <ScrollView style={appStyles.body} scrollEnabled={true}>
           <Text style={forgotPasswordStyles.topText}>
@@ -101,4 +95,4 @@ class ForgotPassword extends React.Component {
   }
 }
 
-export default RedirUserContainer(ForgotPassword);
+export default (ForgotPassword);

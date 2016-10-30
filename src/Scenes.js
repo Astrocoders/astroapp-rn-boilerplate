@@ -19,12 +19,12 @@ export default Actions.create(
       key="__rootLoading"
       wrapRouter={false}
       component={FullLoader}
-      initial={true}
     />
     <Scene
       key="login"
       wrapRouter={false}
       component={Login}
+      initial={true}
     />
     <Scene
       key="register"

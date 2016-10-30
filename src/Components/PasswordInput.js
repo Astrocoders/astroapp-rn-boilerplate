@@ -9,7 +9,6 @@ import _ from 'lodash'
 import iconInputStyles from '~/Styles/iconInput'
 import appStyles from '~/Styles/app'
 import passwordInputStyles from '~/Styles/passwordInput'
-import {brandSecondary as secondary, dark, light} from '~/Styles/colors'
 
 class PasswordInput extends React.Component {
   constructor(props){
@@ -46,7 +45,6 @@ class PasswordInput extends React.Component {
         <Icon
           name={this.state.viewPassword ? 'ios-eye' : 'ios-eye-outline'}
           size={27}
-          color={secondary}
           style={this.props.eyeIconStyle || passwordInputStyles.eyeIcon}
           onPress={() => this.togglePasswordView()}
         />

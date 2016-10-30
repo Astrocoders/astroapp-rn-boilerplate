@@ -1,11 +1,11 @@
-import OneSignal from 'react-native-onesignal';
+// import OneSignal from 'react-native-onesignal';
 import { Actions } from 'react-native-router-flux';
 
-OneSignal.configure({
-  onNotificationOpened(message, data, isActive){
-    handleNotification(data);
-  },
-});
+// OneSignal.configure({
+//   onNotificationOpened(message, data, isActive){
+//     handleNotification(data);
+//   },
+// });
 
 function handleNotification(data) {
   if(data.route){

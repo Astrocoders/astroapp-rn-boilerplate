@@ -18,11 +18,7 @@ import TextInput from '~/Components/TextInput'
 import PasswordTextInput from '~/Components/PasswordInput'
 import ButtonRounded from '~/Components/ButtonRounded'
 
-// Services and utils
-import AppEventEmitter from '~/Services/AppEventEmitter'
-
 // Containers
-import RedirUserContainer from '~/Containers/redir_user'
 
 // Styles
 import loginStyles from '~/Styles/login'
@@ -34,10 +30,6 @@ class Login extends Component {
       email: null,
       password: null,
     }
-  }
-
-  componentDidMount () {
-    AppEventEmitter.emit('sidebar.disable')
   }
 
   login(){
@@ -106,4 +98,4 @@ class Login extends Component {
   }
 }
 
-export default RedirUserContainer(Login)
+export default (Login)
