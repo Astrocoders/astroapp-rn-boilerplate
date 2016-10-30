@@ -30,7 +30,7 @@ import '~/Services/OneSignalListener'
 import appStyles from './Styles/app'
 
 // Initialize Meteor DDP connection
-// ConnectServer()
+ConnectServer()
 
 @AppContainer
 export default class RootRouter extends Component {
