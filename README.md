@@ -17,3 +17,4 @@ We strongly recommend you to not clone directly and use our CLI [astroman](https
 
 ### Todo
 - [ ] integrate with redux
+- Make Meteor integration and user system patchable
