@@ -8,7 +8,11 @@ import Spinner from 'react-native-spinkit'
 import styles from '../Styles/loader'
 
 const Loader = () => (
-  <View style={styles.main}>
+  <View style={{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}>
     <Spinner
       size={40}
       type="9CubeGrid"
