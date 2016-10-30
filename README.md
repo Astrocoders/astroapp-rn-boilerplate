@@ -16,5 +16,4 @@ It comes with:
 We strongly recommend you to not clone directly and use our CLI [astroman](https://github.com/Astrocoders/astroman) to help you build awesome apps. Check out `astroman`'s README for more.
 
 ### Todo
-- [ ] integrate with redux
 - Make Meteor integration and user system patchable
