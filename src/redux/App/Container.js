@@ -6,7 +6,7 @@ import {
 } from './actions'
 
 export default connect(
-  function mapStateToProps({ app }){
+  function mapStateToProps({ app }: { app:Object }):Object {
     return {
       appState: app,
     }

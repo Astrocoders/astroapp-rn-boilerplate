@@ -14,12 +14,16 @@ import {
 
 export default AppContainer(({ appDispatch, title, leftButtonHandler }) => (
   <NavigationBar
-    rightComponent={<Icon name="sidebar" onPress={appDispatch.showDrawer}/>}
     leftComponent={(
+      <Button onPress={appDispatch.showDrawer}>
+        <Icon name="sidebar"/>
+      </Button>
+    )}
+    rightComponent={leftButtonHandler ? (
       <Button styleName="clear" onPress={leftButtonHandler}>
         <Text>List</Text>
       </Button>
-    )}
+    ) : null}
     centerComponent={<Title>{title}</Title>}
   />
 ))

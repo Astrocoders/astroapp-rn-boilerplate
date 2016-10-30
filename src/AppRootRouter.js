@@ -30,7 +30,7 @@ import '~/Services/OneSignalListener'
 import appStyles from './Styles/app'
 
 // Initialize Meteor DDP connection
-ConnectServer()
+// ConnectServer()
 
 @AppContainer
 export default class RootRouter extends Component {
@@ -45,10 +45,11 @@ export default class RootRouter extends Component {
           openDrawerOffset={0.2}
           panCloseMask={0.2}
           acceptPan={false}
-          disabled={this.props.appState.isDrawerVisible}
+          disabled={this.props.appState.isDrawerEnabled}
           useInteractionManager={true}
           content={<Sidebar />}
           tweenEasing="easeInOutCirc"
+          open={this.props.appState.isDrawerVisible}
         >
           <Router
             hideNavBar={true}
