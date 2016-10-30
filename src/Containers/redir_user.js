@@ -1,4 +1,5 @@
 import { Actions } from 'react-native-router-flux'
+import Loader from '~/Components/Loader'
 import Meteor, {
   composeWithTracker,
 } from 'react-native-meteor'
@@ -17,4 +18,4 @@ function composer(props, onData){
   })
 }
 
-export default composeWithTracker(composer)
+export default composeWithTracker(composer, Loader, Loader)
