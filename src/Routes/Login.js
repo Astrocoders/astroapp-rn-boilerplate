@@ -24,6 +24,7 @@ import RedirUserContainer from '~/Containers/redir_user'
 // Styles
 import loginStyles from '~/Styles/login'
 
+@RedirUserContainer
 class Login extends Component {
   constructor(props) {
     super(props)
