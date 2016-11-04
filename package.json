@@ -16,7 +16,7 @@
     "android:release:generate": "cd android && ./gradlew assembleRelease",
     "android:release:install": "cd android && adb install app/build/outputs/apk/app-release.apk",
     "test": "jest",
-    "test-watch": "jest --watch"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@shoutem/ui": "^0.9.1",
