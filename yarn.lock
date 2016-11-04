@@ -4673,7 +4673,7 @@ react-native-keyboard-aware-scroll-view@^0.2.1:
   dependencies:
     react-timer-mixin "^0.13.3"
 
-"react-native-lightbox@github:shoutem/react-native-lightbox":
+react-native-lightbox@shoutem/react-native-lightbox:
   version "0.6.0"
   resolved "https://codeload.github.com/shoutem/react-native-lightbox/tar.gz/42f63838a9e778bb554275b10f029140071f35d1"
   dependencies:
@@ -4684,7 +4684,7 @@ react-native-loading-spinner-overlay@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-0.3.0.tgz#3659c7c35523087e8db8f04c9e526d519f907b2b"
 
-"react-native-maps@github:5minutes/react-native-maps#friends-with-28":
+react-native-maps@5minutes/react-native-maps#friends-with-28:
   version "0.6.0"
   resolved "https://codeload.github.com/5minutes/react-native-maps/tar.gz/4488c1fb00251808f60f3edc6c1212b5c9bba3ee"
 
