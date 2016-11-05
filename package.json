@@ -57,14 +57,12 @@
     "jest": "^16.0.2",
     "jest-react-native": "^16.1.0",
     "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
     "react-native-mock": "^0.2.7",
     "react-test-renderer": "^15.3.2",
     "wd": "^1.0.0"
   },
   "jest": {
-    "preset": "jest-react-native",
-    "moduleNameMapper": {
-      "^~/(.*)": "<rootDir>/src/$1"
-    }
+    "preset": "jest-react-native"
   }
 }
