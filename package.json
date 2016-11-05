@@ -59,5 +59,8 @@
     "react-native-mock": "^0.2.7",
     "react-test-renderer": "^15.3.2",
     "wd": "^1.0.0"
+  },
+  "jest": {
+    "rootDir": "./src"
   }
 }
