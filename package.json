@@ -55,12 +55,14 @@
     "eslint-plugin-react": "^6.4.0",
     "flow-bin": "^0.34.0",
     "jest": "^16.0.2",
+    "jest-react-native": "^16.1.0",
     "react-addons-test-utils": "^15.3.2",
     "react-native-mock": "^0.2.7",
     "react-test-renderer": "^15.3.2",
     "wd": "^1.0.0"
   },
   "jest": {
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "preset": "jest-react-native"
   }
 }

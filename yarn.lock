@@ -3382,6 +3382,10 @@ jest-mock@^16.0.2:
   version "16.0.2"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-16.0.2.tgz#97b533343295d0082e9474a73ac4eb474d1636fe"
 
+jest-react-native:
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/jest-react-native/-/jest-react-native-16.1.0.tgz#b0132efdcf871b2fd906f40079460c9157f14daa"
+
 jest-resolve-dependencies@^16.0.2:
   version "16.0.2"
   resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-16.0.2.tgz#b204166d50141469d10667dc216239c0be865729"
