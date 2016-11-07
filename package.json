@@ -10,7 +10,7 @@
     "reinstall-npm-modules": "npm cache clean && rm -rf node_modules && yarn install",
     "clear:ios": "cd ios && rm -rf build",
     "clear:watchman": "watchman watch-del-all",
-    "hyper-clean": "npm run warning-clean-up && npm run watchman:clear && npm run ios:clean && rm -rf $TMPDIR/react-* && npm run reinstall-npm-modules && npm run android:gradle-clean && react-native link",
+    "hyper-clean": "npm run warning-clean-up && npm run watchman:clear && npm run clear:ios && rm -rf $TMPDIR/react-* && npm run reinstall-npm-modules && npm run android:gradle-clean && react-native link",
     "android:gradle-clean": "cd android && ./gradlew clean",
     "android:reverse-ports": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:3000 tcp:3000",
     "android:release:generate": "cd android && ./gradlew assembleRelease",
