@@ -15,6 +15,7 @@
     "android:reverse-ports": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:3000 tcp:3000",
     "android:release:generate": "cd android && ./gradlew assembleRelease",
     "android:release:install": "cd android && adb install app/build/outputs/apk/app-release.apk",
+    "android:test:monkey": "adb shell monkey -p com.astroapp -v 500",
     "test": "jest",
     "test:watch": "jest --watch"
   },
