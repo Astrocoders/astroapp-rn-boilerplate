@@ -453,6 +453,10 @@ babel-plugin-jest-hoist@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-17.0.2.tgz#213488ce825990acd4c30f887dca09fffeb45235"
 
+babel-plugin-module-alias@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-module-alias/-/babel-plugin-module-alias-1.6.0.tgz#df7e3aaba3544f4c06a9d3314a26bbbff6d87b61"
+
 babel-plugin-react-transform@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-transform/-/babel-plugin-react-transform-2.0.2.tgz#515bbfa996893981142d90b1f9b1635de2995109"

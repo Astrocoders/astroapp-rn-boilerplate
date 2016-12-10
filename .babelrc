@@ -2,6 +2,9 @@
   "presets": ["react-native"],
   "sourceMaps": true,
   "plugins": [
+    ["module-alias", [
+      { "src": "./src", expose: "~" }
+    ]],
     "transform-decorators-legacy"
   ]
 }
