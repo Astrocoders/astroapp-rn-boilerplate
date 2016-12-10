@@ -50,51 +50,50 @@ class Login extends Component {
     return (
       <KeyboardAwareScrollView
         style={loginStyles.container}
-        scrollEnabled={this.state.scroll}
       >
-        <View
-          style={{height: this.state.logoSectionHeight}}
-        >
-          <Image source={require('~/img/icon.png')} style={loginStyles.logo} />
-          <Text style={loginStyles.subLogo}>{'AstroApp'.toUpperCase()}</Text>
-        </View>
-        <View style={loginStyles.body}>
-          <TextInput
-            placeholder="Email"
-            value={this.state.email}
-            onChangeText={val => this.setState({email: val})}
-            keyboardType="email-address"
-            autoCapitalize="none"
+          <View
+            style={{height: this.state.logoSectionHeight}}
+          >
+            <Image source={require('~/img/icon.png')} style={loginStyles.logo} />
+            <Text style={loginStyles.subLogo}>{'AstroApp'.toUpperCase()}</Text>
+          </View>
+          <View style={loginStyles.body}>
+            <TextInput
+              placeholder="Email"
+              value={this.state.email}
+              onChangeText={val => this.setState({email: val})}
+              keyboardType="email-address"
+              autoCapitalize="none"
+              style={loginStyles.inputs}
+            />
+
+          <PasswordTextInput
+            placeholder="Password"
+            value={this.state.password}
+            onChangeText={(val) => this.setState({password: val})}
             style={loginStyles.inputs}
           />
-
-        <PasswordTextInput
-          placeholder="Password"
-          value={this.state.password}
-          onChangeText={(val) => this.setState({password: val})}
-          style={loginStyles.inputs}
-        />
-        <TouchableOpacity
-          onPress={Actions.forgotPassword}
-          style={loginStyles.forgotPasswordContainer}
-        >
-          <Text>
-            Forgot Password?
-          </Text>
-        </TouchableOpacity>
-        <ButtonRounded
-          onPress={() => this.login()}
-          text="Sign in"
-          style={loginStyles.btn}
-          textStyle={loginStyles.btnText}
-        />
-        <ButtonRounded
-          onPress={Actions.register}
-          text="Register"
-          style={loginStyles.btnSignUp}
-          textStyle={loginStyles.btnTextSignUp}
-        />
-      </View>
+          <TouchableOpacity
+            onPress={Actions.forgotPassword}
+            style={loginStyles.forgotPasswordContainer}
+          >
+            <Text>
+              Forgot Password?
+            </Text>
+          </TouchableOpacity>
+          <ButtonRounded
+            onPress={() => this.login()}
+            text="Sign in"
+            style={loginStyles.btn}
+            textStyle={loginStyles.btnText}
+          />
+          <ButtonRounded
+            onPress={Actions.register}
+            text="Register"
+            style={loginStyles.btnSignUp}
+            textStyle={loginStyles.btnTextSignUp}
+          />
+        </View>
       </KeyboardAwareScrollView>
     )
   }
