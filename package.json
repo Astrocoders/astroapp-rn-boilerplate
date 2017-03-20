@@ -63,6 +63,7 @@
     "react-dom": "^15.3.2",
     "react-native-mock": "^0.2.9",
     "react-test-renderer": "^15.3.2",
+    "remote-redux-devtools": "^0.5.7",
     "wd": "^1.0.0"
   },
   "jest": {
