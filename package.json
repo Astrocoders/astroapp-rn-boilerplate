@@ -20,7 +20,6 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@shoutem/ui": "^0.10.0",
     "babel-preset-react-native": "^1.9.0",
     "color": "^1.0.2",
     "immutable": "^3.8.1",
@@ -57,12 +56,12 @@
     "flow-bin": "^0.36.0",
     "jest": "^17.0.3",
     "jest-react-native": "^16.1.0",
+    "lerna": "2.0.0-beta.33",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.3.2",
     "react-native-mock": "^0.2.9",
     "react-test-renderer": "^15.3.2",
-    "wd": "^1.0.0",
-    "lerna": "2.0.0-beta.33"
+    "wd": "^1.0.0"
   },
   "jest": {
     "preset": "jest-react-native"
