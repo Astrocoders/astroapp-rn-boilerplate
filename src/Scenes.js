@@ -8,10 +8,18 @@ import {
   Scene,
 } from 'react-native-router-flux'
 
-import Login from './Routes/Login'
-import Register from './Routes/Register'
-import ForgotPassword from './Routes/ForgotPassword'
+import Login from 'astro-app-meteor/Scenes/Login'
+import Register from './Scenes/Register'
+import ForgotPassword from './Scenes/ForgotPassword'
 import FullLoader from './Components/FullLoader'
+
+const LoginScene = (...props) => (
+  <Login
+    title="AstroApp"
+    featuredImageSrc={require('~/img/icon.png')}
+    {...props}
+  />
+)
 
 export default Actions.create(
   <Scene key="root">
@@ -23,7 +31,7 @@ export default Actions.create(
     <Scene
       key="login"
       wrapRouter={false}
-      component={Login}
+      component={LoginScene}
       initial={true}
     />
     <Scene
