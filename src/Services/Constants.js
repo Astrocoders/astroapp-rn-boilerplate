@@ -1,5 +1,3 @@
-export default {
-  IS_APOLLO_APP: false,
-  IS_METEOR_APP: true,
-  METEOR_SERVER: 'ws://127.0.0.1:3000/websocket',
-};
+export const IS_METEOR_APP = true
+export const IS_APOLLO_APP = true
+export const METEOR_SERVER = 'ws://127.0.0.1:3000/websocket'
