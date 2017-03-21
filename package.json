@@ -40,8 +40,7 @@
     "react-native-vector-icons": "^3.0.0",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0",
-    "redux-logger": "^2.7.4",
-    "redux-saga": "^0.13.0"
+    "redux-logger": "^2.7.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

@@ -4,7 +4,7 @@ import {
   BackAndroid,
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import AppRootRouter from './src/AppRootRouter'
+import AppRootRouter from './src'
 import { Provider } from 'react-redux'
 import store from '~/redux/store'
 

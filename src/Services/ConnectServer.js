@@ -1,4 +1,4 @@
 import Meteor from 'react-native-meteor';
-import CONSTANTS from './Constants';
+import { METEOR_SERVER } from './Constants';
 
-export default () => Meteor.connect(CONSTANTS.METEOR_SERVER);
+export default () => Meteor.connect(METEOR_SERVER);

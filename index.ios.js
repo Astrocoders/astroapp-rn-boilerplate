@@ -3,7 +3,7 @@ import {
   AppRegistry,
   StatusBarIOS,
 } from 'react-native'
-import AppRootRouter from './src/AppRootRouter'
+import AppRootRouter from './src'
 import { Provider } from 'react-redux'
 import store from '~/redux/store'
 
