@@ -16,7 +16,7 @@ const middlewares = [
   logicMiddleware,
 ]
 
-const devToolsEnhancer = __DEV__ ? require('remote-redux-devtools') : () => ()
+const devToolsEnhancer = __DEV__ ? require('remote-redux-devtools').default : () => {}
 const enhancer = compose(...compact([
   applyMiddleware(...middlewares),
   autoRehydrate(),
