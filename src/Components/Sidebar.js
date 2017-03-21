@@ -4,9 +4,9 @@ import React, {
   PropTypes,
 } from 'react'
 import {
-  Text,
   View,
   TouchableOpacity,
+  Text,
   TouchableWithoutFeedback,
   ScrollView,
   Alert,
@@ -16,8 +16,10 @@ import Moment from 'moment'
 import { Actions } from 'react-native-router-flux'
 import {
   Button,
+  Content,
+  Container,
   Title,
-} from '@shoutem/ui'
+} from 'native-base'
 import AppContainer from '~/redux/App/Container'
 
 @AppContainer
@@ -39,8 +41,8 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <View>
-        <ScrollView>
+      <Container>
+        <Content>
           <View>
             <Title>Astro</Title>
             <Text>{this.currentDate()}</Text>
@@ -53,8 +55,8 @@ class Sidebar extends Component {
               <Text>Logout</Text>
             </Button>
           </View>
-        </ScrollView>
-      </View>
+        </Content>
+      </Container>
     )
   }
 }

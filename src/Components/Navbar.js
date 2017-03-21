@@ -6,24 +6,32 @@ import {
   Text,
 } from 'react-native'
 import {
-  NavigationBar,
+  Header,
   Title,
+  Left,
+  Right,
   Icon,
-  Button,
-} from '@shoutem/ui'
+  Body,
+} from 'native-base'
 
-export default AppContainer(({ appDispatch, title, leftButtonHandler }) => (
-  <NavigationBar
-    leftComponent={(
-      <Button onPress={appDispatch.showDrawer}>
-        <Icon name="sidebar"/>
-      </Button>
-    )}
-    rightComponent={leftButtonHandler ? (
-      <Button styleName="clear" onPress={leftButtonHandler}>
-        <Text>List</Text>
-      </Button>
-    ) : null}
-    centerComponent={<Title>{title}</Title>}
-  />
-))
+export default AppContainer(function Navbar({ appDispatch, title, rightActionHandler }){
+  return (
+    <Container>
+      <Header>
+        <Left>
+          <Button
+            onPress={appDispatch.showDrawer}
+            transparent
+          >
+            <Icon name='menu'/>
+          </Button>
+        </Left>
+        <Body>
+          <Title>
+            {title}
+          </Title>
+        </Body>
+      </Header>
+    </Container>
+  )
+})
