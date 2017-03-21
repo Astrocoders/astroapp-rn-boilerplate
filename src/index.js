@@ -10,9 +10,12 @@ import {
 } from 'react-native'
 import {
   Actions,
-  Router,
   Scene,
+  Router,
 } from 'react-native-router-flux'
+import {
+  Container,
+} from 'native-base'
 import Drawer from 'react-native-drawer'
 import { connect } from 'react-redux'
 
@@ -25,39 +28,44 @@ import ConnectServer from '~/Services/ConnectServer'
 import AppContainer from '~/redux/App/Container'
 
 import '~/Services/OneSignalListener'
+import { IS_METEOR_APP } from '~/Services/Constants'
 
 // Styles
 import appStyles from './Styles/app'
 
 // Initialize Meteor DDP connection
-ConnectServer()
+if(IS_METEOR_APP){
+  ConnectServer()
+}
+
+const RouterWithRedux = connect(({ routes }) => ({ routes }))(Router)
 
 @AppContainer
 export default class RootRouter extends Component {
   render() {
     return (
-      <View style={[appStyles.container, {paddingTop: 0}]}>
+      <Container>
         <Drawer
+          tapToClose
+          useInteractionManager
           style={{marginBottom: 20}}
           ref="menu"
           type="static"
-          tapToClose={true}
           openDrawerOffset={0.2}
           panCloseMask={0.2}
           acceptPan={false}
           disabled={this.props.appState.isDrawerEnabled}
-          useInteractionManager={true}
           content={<Sidebar />}
           tweenEasing="easeInOutCirc"
           open={this.props.appState.isDrawerVisible}
         >
-          <Router
-            hideNavBar={true}
+          <RouterWithRedux
+            hideNavBar
             dispatch={this.props.appDispatch.hideDrawer}
             scenes={Scenes}
           />
         </Drawer>
-      </View>
+      </Container>
     )
   }
 }
