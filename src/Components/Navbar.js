@@ -12,26 +12,25 @@ import {
   Right,
   Icon,
   Body,
+  Button,
 } from 'native-base'
 
-export default AppContainer(function Navbar({ appDispatch, title, rightActionHandler }){
+export default AppContainer(function Navbar({ appDispatch, title, rightActionHandler, isNavigational }){
   return (
-    <Container>
-      <Header>
-        <Left>
-          <Button
-            onPress={appDispatch.showDrawer}
-            transparent
-          >
-            <Icon name='menu'/>
-          </Button>
-        </Left>
-        <Body>
-          <Title>
-            {title}
-          </Title>
-        </Body>
-      </Header>
-    </Container>
+    <Header>
+      <Left>
+        <Button
+          onPress={isNavigational ? Actions.pop : appDispatch.showDrawer}
+          transparent
+        >
+          <Icon name={isNavigational ? 'arrow-back': 'menu'}/>
+        </Button>
+      </Left>
+      <Body>
+        <Title>
+          {title}
+        </Title>
+      </Body>
+    </Header>
   )
 })
