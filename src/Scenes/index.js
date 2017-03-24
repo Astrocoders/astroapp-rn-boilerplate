@@ -9,8 +9,8 @@ import {
 } from 'react-native-router-flux'
 
 import Login from 'astro-app-meteor/Scenes/Login'
-import Register from './Register'
-import ForgotPassword from './ForgotPassword'
+import Register from './User/Register'
+import ForgotPassword from './User/ForgotPassword'
 import FullLoader from '~/Components/FullLoader'
 
 const LoginScene = (...props) => (
