@@ -42,7 +42,8 @@
     "recompose": "^0.22.0",
     "redux": "^3.6.0",
     "redux-immutable": "^4.0.0",
-    "redux-logger": "^2.7.4"
+    "redux-logger": "^2.7.4",
+    "redux-persist-transform-immutable": "^4.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
