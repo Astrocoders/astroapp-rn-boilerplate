@@ -6,9 +6,9 @@ import {
 } from './actions'
 
 export default connect(
-  function mapStateToProps({ app }: { app:Object }):Object {
+  function mapStateToProps(state){
     return {
-      appState: app,
+      appState: state.get('app').toJS(),
     }
   },
   function mapDispatchToProps(dispatch){
