@@ -1,3 +1,4 @@
+import { Map } from 'immutable'
 import {
   SHOW_DRAWER,
   HIDE_DRAWER,
@@ -5,15 +6,16 @@ import {
   ENABLE_DRAWER,
 } from './actions'
 
-export default function app(state = {
+const initialState = Map({
   isDrawerEnabled: true,
   isDrawerVisible: false,
-}, action = {}){
+})
+export default function app(state = initialState, action = {}){
   switch(action.type){
-    case SHOW_DRAWER: return { ...state, isDrawerVisible: true}
-    case HIDE_DRAWER: return { ...state, isDrawerVisible: false}
-    case ENABLE_DRAWER: return { ...state, isDrawerEnabled: true}
-    case DISABLE_DRAWER: return { ...state, isDrawerEnabled: false}
+    case SHOW_DRAWER: return state.set('isDrawerVisible', true)
+    case HIDE_DRAWER: return state.set('isDrawerVisible', false)
+    case ENABLE_DRAWER: return state.set('isDrawerEnabled', true)
+    case DISABLE_DRAWER: return state.set('isDrawerEnabled', false)
     default: return state
   }
 } 

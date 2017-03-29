@@ -2,6 +2,8 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import { compact } from 'lodash'
 import { createLogicMiddleware } from 'redux-logic'
 import { AsyncStorage } from 'react-native'
+import immutableTransform from 'redux-persist-transform-immutable'
+import { Map } from 'immutable'
 import {
   persistStore,
   autoRehydrate,
@@ -20,11 +22,16 @@ const devToolsEnhancer = __DEV__ ? require('remote-redux-devtools').default : ()
 const enhancer = compose(...compact([
   applyMiddleware(...middlewares),
   autoRehydrate(),
-  __DEV__ ? devToolsEnhancer({ realtime: true }) : null,
+  __DEV__ ? devToolsEnhancer({
+    realtime: true,
+    stateSanitizer: state => state.toJS(),
+  }) : null,
 ]))
 
+const initialState = Map()
 const store = createStore(
   rootReducers,
+  initialState,
   enhancer,
 )
 
@@ -36,6 +43,9 @@ if (module.hot) {
   })
 }
 
-const persistor = persistStore(store, { storage: AsyncStorage })
+const persistor = persistStore(store, {
+  storage: AsyncStorage,
+  transforms: [immutableTransform()],
+})
 
 export default store
