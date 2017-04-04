@@ -26,7 +26,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "native-base": "^2.1.0",
-    "react": "^15.4.1",
+    "react": "^15.4.2",
     "react-komposer": "^2.0.0",
     "react-native": "^0.43.0",
     "react-native-drawer": "^2.3.0",
