@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import {Actions} from 'react-native-router-flux'
 import AppContainer from '~/redux/App/Container'
