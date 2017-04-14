@@ -30,9 +30,6 @@ import AppContainer from '~/redux/App/Container'
 import '~/Services/OneSignalListener'
 import { IS_METEOR_APP } from '~/Services/Constants'
 
-// Styles
-import appStyles from './Styles/app'
-
 // Initialize Meteor DDP connection
 if(IS_METEOR_APP){
   ConnectServer()
