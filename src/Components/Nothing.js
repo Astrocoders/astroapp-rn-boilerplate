@@ -1,14 +1,9 @@
-'use strict'
-
 import React from "react"
 import {
   View,
   Text,
-} from "react-native"
+} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-
-// Styles
-import styles from '../Styles/loader'
 
 const Nothing = ({message = 'Nothing to show :('}) => (
   <View
