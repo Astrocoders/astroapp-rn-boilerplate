@@ -21,7 +21,11 @@ const middlewares = [
 const devToolsEnhancer = __DEV__ ? require('remote-redux-devtools').default : () => {}
 const enhancer = compose(...compact([
   applyMiddleware(...middlewares),
-  autoRehydrate(),
+  autoRehydrate({
+    stateReconciler(state, inboundState, reducedState){
+      return state.merge(reducedState).merge(inboundState)
+    },
+  }),
   __DEV__ ? devToolsEnhancer({
     realtime: true,
     stateSanitizer: state => state.toJS(),
@@ -48,6 +52,7 @@ persistStore(store, {
   transforms: [immutableTransform()],
   _stateGetter: (state, key) => state.get ? state.get(key) : state[key],
   _stateSetter: (state, key, value) => state.set ? state.set(key, value) : (state[key] = value, state),
+  _stateIterator: (state, callback) => state.keySeq().forEach(key => callback(state.get(key), key)),
 })
 
 export default store
