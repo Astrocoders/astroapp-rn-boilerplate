@@ -28,7 +28,7 @@ const enhancer = compose(...compact([
   }) : null,
 ]))
 
-const initialState = Map()
+const initialState = Map({})
 const store = createStore(
   rootReducers,
   initialState,
@@ -43,9 +43,11 @@ if (module.hot) {
   })
 }
 
-const persistor = persistStore(store, {
+persistStore(store, {
   storage: AsyncStorage,
   transforms: [immutableTransform()],
+  _stateGetter: (state, key) => state.get ? state.get(key) : state[key],
+  _stateSetter: (state, key, value) => state.set ? state.set(key, value) : (state[key] = value, state),
 })
 
 export default store
