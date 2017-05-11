@@ -5,16 +5,16 @@ import {
 } from './actions'
 
 export default connect(
-  function mapStateToProps(state){
+  state => {
     return {
       appState: state.get('app').toJS(),
     }
   },
-  function mapDispatchToProps(dispatch){
+  dispatch => {
     return {
       appDispatch: {
-        hideDrawer: () => dispatch({type: HIDE_DRAWER}),
-        showDrawer: () => dispatch({type: SHOW_DRAWER}),
+        hideDrawer: () => dispatch({ type: HIDE_DRAWER }),
+        showDrawer: () => dispatch({ type: SHOW_DRAWER }),
       },
     }
   }

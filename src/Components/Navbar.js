@@ -1,5 +1,5 @@
 import React from 'react'
-import {Actions} from 'react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import AppContainer from '~/redux/App/Container'
 import {
   Text,
@@ -14,15 +14,15 @@ import {
   Button,
 } from 'native-base'
 
-export default AppContainer(function Navbar({ appDispatch, title, rightActionHandler, isNavigational }){
+export default AppContainer(({ appDispatch, title, rightActionHandler, isNavigational }) => {
   return (
     <Header>
       <Left>
         <Button
           onPress={isNavigational ? Actions.pop : appDispatch.showDrawer}
           transparent
-        >
-          <Icon name={isNavigational ? 'arrow-back': 'menu'}/>
+          >
+          <Icon name={isNavigational ? 'arrow-back' : 'menu'}/>
         </Button>
       </Left>
       <Body>

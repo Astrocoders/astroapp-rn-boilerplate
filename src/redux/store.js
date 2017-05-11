@@ -22,7 +22,7 @@ const devToolsEnhancer = __DEV__ ? require('remote-redux-devtools').default : ()
 const enhancer = compose(...compact([
   applyMiddleware(...middlewares),
   autoRehydrate({
-    stateReconciler(state, inboundState, reducedState){
+    stateReconciler(state, inboundState, reducedState) {
       return state.merge(reducedState).merge(inboundState)
     },
   }),

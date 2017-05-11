@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import { View, Text } from 'react-native'
 import Loader from './Loader'
 
 const FullLoader = () => (
@@ -12,7 +12,7 @@ const FullLoader = () => (
       justifyContent: 'center',
       backgroundColor: '#fff',
     }}
-  >
+    >
     <Loader/>
   </View>
 )

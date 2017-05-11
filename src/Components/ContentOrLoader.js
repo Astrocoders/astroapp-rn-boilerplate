@@ -7,7 +7,11 @@ import {
 } from 'lodash'
 
 export default props => {
-  if(props.isLoading || !isBoolean(props.isLoading)) return <Spinner color={theme.colors.blue}/>
-  if(props.isNothing) return <Nothing message={props.nothingMessage}/>
+  if (props.isLoading || !isBoolean(props.isLoading)) {
+    return <Spinner color={theme.colors.blue}/>
+  }
+  if (props.isNothing) {
+    return <Nothing message={props.nothingMessage}/>
+  }
   return props.children
 }

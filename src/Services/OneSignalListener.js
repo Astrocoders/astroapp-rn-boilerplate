@@ -1,5 +1,5 @@
-// import OneSignal from 'react-native-onesignal';
-import { Actions } from 'react-native-router-flux';
+// Import OneSignal from 'react-native-onesignal';
+import { Actions } from 'react-native-router-flux'
 
 // OneSignal.configure({
 //   onNotificationOpened(message, data, isActive){
@@ -8,10 +8,10 @@ import { Actions } from 'react-native-router-flux';
 // });
 
 function handleNotification(data) {
-  if(data.route){
+  if (data.route) {
     // We need to give some time to Actions get populated first
     setTimeout(() => {
-      Actions[data.route.name](data.route.props);
-    }, 1000);
+      Actions[data.route.name](data.route.props)
+    }, 1000)
   }
 }

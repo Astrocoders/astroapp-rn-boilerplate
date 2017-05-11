@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
   Navigator,
 } from 'react-native'
@@ -18,7 +18,7 @@ const LoginScene = (...props) => (
     title="AstroApp"
     featuredImageSrc={require('~/img/icon.png')}
     {...props}
-  />
+    />
 )
 
 export default Actions.create(
@@ -27,22 +27,22 @@ export default Actions.create(
       key="__rootLoading"
       wrapRouter={false}
       component={FullLoader}
-    />
+      />
     <Scene
       key="login"
       wrapRouter={false}
       component={LoginScene}
-      initial={true}
-    />
+      initial
+      />
     <Scene
       key="register"
       wrapRouter={false}
       component={Register}
-    />
+      />
     <Scene
       key="forgotPassword"
       wrapRouter={false}
       component={ForgotPassword}
-    />
+      />
   </Scene>
 )
