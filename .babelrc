@@ -2,9 +2,17 @@
   "presets": ["react-native"],
   "sourceMaps": true,
   "plugins": [
-    ["module-alias", [
-      { "src": "./src", expose: "~" }
-    ]],
-    "transform-decorators-legacy"
+    "transform-flow-strip-types",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
   ]
 }

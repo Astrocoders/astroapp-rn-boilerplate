@@ -16,7 +16,7 @@
     "android:release:generate": "cd android && ./gradlew assembleRelease",
     "android:release:install": "cd android && adb install app/build/outputs/apk/app-release.apk",
     "android:test:monkey": "adb shell monkey -p com.astroapp -v 500",
-    "test": "jest",
+    "test": "xo && jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
@@ -49,16 +49,18 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
-    "babel-plugin-module-alias": "^1.6.0",
+    "babel-plugin-module-resolver": "^2.7.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-react-native": "^1.9.1",
     "enzyme": "^2.8.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-xo-react": "^0.12.0",
+    "eslint-import-resolver-babel-module": "^3.0.0",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-react": "^7.0.0",
     "jest": "^19.0.2",
     "jest-react-native": "^18.0.0",
     "lerna": "^2.0.0-beta.38",
@@ -67,9 +69,40 @@
     "react-native-mock": "^0.3.1",
     "react-test-renderer": "^15.4.2",
     "remote-redux-devtools": "^0.5.7",
-    "wd": "^1.2.0"
+    "wd": "^1.2.0",
+    "xo": "^0.18.2"
   },
   "jest": {
     "preset": "jest-react-native"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": true,
+    "envs": [
+      "node",
+      "jest"
+    ],
+    "filename-case": "camelCase",
+    "extends": "xo-react",
+    "rules": {
+      "unicorn/no-process-exit": 0,
+      "unicorn/filename-case": [
+        1,
+        "camelCase"
+      ],
+      "comma-dangle": [
+        1,
+        "always-multiline"
+      ],
+      "object-curly-spacing": [
+        1,
+        "always"
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "babel-module": {}
+      }
+    }
   }
 }
