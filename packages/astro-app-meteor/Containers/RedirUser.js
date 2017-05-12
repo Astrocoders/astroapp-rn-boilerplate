@@ -4,11 +4,11 @@ import Meteor, {
   composeWithTracker,
 } from 'react-native-meteor'
 
-function composer(props, onData){
+function composer(props, onData) {
   const loggingIn = Meteor.loggingIn()
   const user = Meteor.user()
-  if(!loggingIn && user){
-    Actions.dashboard({type: 'replace'})
+  if (!loggingIn && user) {
+    Actions.dashboard({ type: 'replace' })
 
     return
   }

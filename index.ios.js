@@ -12,7 +12,7 @@ StatusBarIOS.setStyle('light-content')
 const App = () => {
   return (
     <Provider store={store}>
-      <AppRootRouter />
+      <AppRootRouter/>
     </Provider>
   )
 }

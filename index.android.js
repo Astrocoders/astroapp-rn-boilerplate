@@ -16,7 +16,7 @@ BackAndroid.addEventListener('hardwareBackPress', () => {
 const App = () => {
   return (
     <Provider store={store}>
-      <AppRootRouter />
+      <AppRootRouter/>
     </Provider>
   )
 }

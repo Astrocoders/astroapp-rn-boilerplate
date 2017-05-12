@@ -9,8 +9,8 @@ import { compose } from 'react-komposer'
 import Loader from '~/Components/Loader'
 import Meteor from 'react-native-meteor'
 
-function composer(props, onData){
-  if(props.hasStoredUser || props.loadingStoredUser){
+function composer(props, onData) {
+  if (props.hasStoredUser || props.loadingStoredUser) {
     onData(null, {})
     return
   }
@@ -21,20 +21,20 @@ function composer(props, onData){
 
   const TOKEN_KEY = 'reactnativemeteor_usertoken'
   AsyncStorage.getItem(TOKEN_KEY, (error, storedUser) => {
-    if(error){
+    if (error) {
       console.warn(error)
       return
     }
-    
+
     onData(null, {
       loadingStoredUser: false,
       hasStoredUser: storedUser,
     })
 
-    if(storedUser){
-      Actions.dashboard({type: 'replace'})
+    if (storedUser) {
+      Actions.dashboard({ type: 'replace' })
     } else {
-      Actions.login({type: 'replace'})
+      Actions.login({ type: 'replace' })
     }
   })
 }
