@@ -3,27 +3,29 @@ import React, {
   PropTypes,
 } from 'react'
 import {
-  Text, 
-  View, 
-  TouchableOpacity, 
-  Alert, 
-  Image, 
+  Text,
+  View,
+  TouchableOpacity,
+  Alert,
+  Image,
 } from 'react-native'
+import {
+  Form,
+  Container,
+  Content,
+  Button,
+  Item,
+  Label,
+  Input,
+} from 'native-base'
 import Spinner from 'react-native-loading-spinner-overlay'
 import {Actions} from 'react-native-router-flux'
 import {StyleSheet, Dimensions} from 'react-native'
 import Meteor from 'react-native-meteor'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
-// Components
-import TextInput from '~/Components/TextInput'
-import PasswordTextInput from '~/Components/PasswordInput'
-import ButtonRounded from '~/Components/ButtonRounded'
 
 // Containers
 import RedirUserContainer from 'astro-app-meteor/Containers/RedirUser'
 
-@RedirUserContainer
 class Login extends Component {
   state = {
     email: null,
@@ -53,53 +55,54 @@ class Login extends Component {
     } = this.props
 
     return (
-      <KeyboardAwareScrollView
-        style={loginStyles.container}
-      >
+      <Container>
+        <Content>
           <View
             style={{height: this.state.logoSectionHeight}}
           >
             <Image source={featuredImageSrc} style={loginStyles.logo} />
             <Text style={loginStyles.subLogo}>{title.toUpperCase()}</Text>
           </View>
-          <View style={loginStyles.body}>
-            <TextInput
-              placeholder="Email"
-              value={this.state.email}
-              onChangeText={val => this.setState({email: val})}
-              keyboardType="email-address"
-              autoCapitalize="none"
-              style={loginStyles.inputs}
-            />
+          <Form style={loginStyles.body}>
+            <Item floatingLabel>
+              <Label>Email</Label>
+              <Input
+                value={this.state.email}
+                onChangeText={val => this.setState({email: val})}
+                keyboardType="email-address"
+                autoCapitalize="none"
+              />
+            </Item>
+            <Item floatingLabel>
+              <Label>Email</Label>
+              <Input
+                value={this.state.password}
+                onChangeText={(val) => this.setState({password: val})}
+                secureTextEntry
+              />
+            </Item>
+            <TouchableOpacity
+              onPress={Actions.forgotPassword}
+              style={loginStyles.forgotPasswordContainer}
+            >
+              <Text>
+                Forgot Password?
+              </Text>
+            </TouchableOpacity>
 
-          <PasswordTextInput
-            placeholder="Password"
-            value={this.state.password}
-            onChangeText={(val) => this.setState({password: val})}
-            style={loginStyles.inputs}
-          />
-          <TouchableOpacity
-            onPress={Actions.forgotPassword}
-            style={loginStyles.forgotPasswordContainer}
-          >
-            <Text>
-              Forgot Password?
-            </Text>
-          </TouchableOpacity>
-          <ButtonRounded
-            onPress={() => this.login()}
-            text="Sign in"
-            style={loginStyles.btn}
-            textStyle={loginStyles.btnText}
-          />
-          <ButtonRounded
-            onPress={Actions.register}
-            text="Register"
-            style={loginStyles.btnSignUp}
-            textStyle={loginStyles.btnTextSignUp}
-          />
-        </View>
-      </KeyboardAwareScrollView>
+            <Button
+              onPress={() => this.login()}
+            >
+              SignIn
+            </Button>
+            <Button
+              onPress={Actions.register}
+            >
+              Register
+            </Button>
+          </Form>
+        </Content>
+      </Container>
     )
   }
 }
@@ -175,4 +178,4 @@ const loginStyles = {
   },
 }
 
-export default (Login)
+export default RedirUserContainer(Login)

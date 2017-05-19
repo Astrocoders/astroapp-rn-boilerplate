@@ -1,16 +1,5 @@
-'use strict'
-
-// Components
-import React, {Component} from 'react'
+import React from 'react'
 import {
-  Navigator,
-  AsyncStorage,
-  View,
-  Text,
-} from 'react-native'
-import {
-  Actions,
-  Scene,
   Router,
 } from 'react-native-router-flux'
 import {
@@ -37,32 +26,31 @@ if(IS_METEOR_APP){
 
 const RouterWithRedux = connect(({ routes }) => ({ routes }))(Router)
 
-@AppContainer
-export default class RootRouter extends Component {
-  render() {
-    return (
-      <Container>
-        <Drawer
-          tapToClose
-          useInteractionManager
-          style={{marginBottom: 20}}
-          ref="menu"
-          type="static"
-          openDrawerOffset={0.2}
-          panCloseMask={0.2}
-          acceptPan={false}
-          disabled={this.props.appState.isDrawerEnabled}
-          content={<Sidebar />}
-          tweenEasing="easeInOutCirc"
-          open={this.props.appState.isDrawerVisible}
-        >
-          <RouterWithRedux
-            hideNavBar
-            dispatch={this.props.appDispatch.hideDrawer}
-            scenes={Scenes}
-          />
-        </Drawer>
-      </Container>
-    )
-  }
+function RootRouter({ appState }){
+  return (
+    <Container>
+      <Drawer
+        tapToClose
+        useInteractionManager
+        style={{marginBottom: 20}}
+        ref="menu"
+        type="static"
+        openDrawerOffset={0.2}
+        panCloseMask={0.2}
+        acceptPan={false}
+        disabled={appState.isDrawerEnabled}
+        content={<Sidebar />}
+        tweenEasing="easeInOutCirc"
+        open={appState.isDrawerVisible}
+      >
+        <RouterWithRedux
+          hideNavBar
+          dispatch={this.props.appDispatch.hideDrawer}
+          scenes={Scenes}
+        />
+      </Drawer>
+    </Container>
+  )
 }
+
+export default AppContainer(RootRouter)
