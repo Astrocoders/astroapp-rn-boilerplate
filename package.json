@@ -85,13 +85,14 @@
       "node",
       "jest"
     ],
-    "filename-case": "camelCase",
     "extends": "xo-react",
     "rules": {
+      "react/jsx-closing-bracket-location": [1, "tag-aligned"],
+      "react/jsx-tag-spacing": [1, "always"],
       "unicorn/no-process-exit": 0,
       "unicorn/filename-case": [
         1,
-        "camelCase"
+        {"case": "pascalCase"}
       ],
       "comma-dangle": [
         1,
